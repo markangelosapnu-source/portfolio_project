@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mark Angelo Sapnu Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f172a;
+      color:#f8fafc;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    header{
+      position:fixed;
+      width:100%;
+      top:0;
+      background:rgba(15,23,42,0.9);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:1rem 0;
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:700;
+      color:#38bdf8;
+    }
+
+    h3{
+      color:#38bdf8;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:2rem;
+    }
+
+    .nav-links a{
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#38bdf8;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding-top:80px;
+      background:linear-gradient(to right,#0f172a,#1e293b);
+    }
+
+    .hero-content h1{
+      font-size:4rem;
+      margin-bottom:1rem;
+    }
+
+    .hero-content h1 span{
+      color:#38bdf8;
+    }
+
+    .hero-content p{
+      max-width:700px;
+      margin:auto;
+      color:#cbd5e1;
+      margin-bottom:2rem;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 28px;
+      background:#38bdf8;
+      color:#0f172a;
+      border-radius:8px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      background:#0ea5e9;
+    }
+
+    section{
+      padding:100px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:2.5rem;
+      margin-bottom:3rem;
+      color:#38bdf8;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:3rem;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:100%;
+    }
+
+    .about-text p{
+      color:#cbd5e1;
+    }
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:1.5rem;
+    }
+
+    .skill-card{
+      background:#1e293b;
+      padding:2rem;
+      border-radius:15px;
+      text-align:center;
+      transition:0.3s;
+      border:1px solid transparent;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-5px);
+      border-color:#38bdf8;
+    }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:2rem;
+    }
+
+    .project-card{
+      background:#1e293b;
+      border-radius:15px;
+      overflow:hidden;
+      transition:0.3s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .project-card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+
+    .project-content{
+      padding:1.5rem;
+    }
+
+    .project-content h3{
+      margin-bottom:1rem;
+      color:#38bdf8;
+    }
+
+    .project-content p{
+      color:#cbd5e1;
+      margin-bottom:1rem;
+    }
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      margin-bottom:1rem;
+      color:#cbd5e1;
+    }
+
+    .socials{
+      margin-top:2rem;
+      display:flex;
+      justify-content:center;
+      gap:1.5rem;
+    }
+
+    .socials a{
+      background:#1e293b;
+      padding:12px 18px;
+      border-radius:10px;
+      transition:0.3s;
+    }
+
+    .socials a:hover{
+      background:#38bdf8;
+      color:#0f172a;
+    }
+
+    footer{
+      text-align:center;
+      padding:2rem;
+      border-top:1px solid rgba(255,255,255,0.1);
+      color:#94a3b8;
+    }
+
+    @media(max-width:768px){
+
+      .hero-content h1{
+        font-size:2.5rem;
+      }
+
+      .about{
+        grid-template-columns:1fr;
+      }
+
+      .nav-links{
+        gap:1rem;
+        font-size:0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Mark Angelo Sapnu</div>
+
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content container">
+      <h1>Hello, I'm <span>Mark Angelo Sapnu</span></h1>
+      <p>
+      2ND Year BSIT student - aspiring Back-End and Database Developer 
+      </p>
+
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about">
+        <img src="angelo pogi.jpg" alt="Profile Photo">
+
+        <div class="about-text">
+          <p>
+            I am currently a 2nd year BSIT student. Technology has always fascinated me because of how it continues to shape the way people live, communicate, and solve problems. From using gadgets and exploring new software to learning how digital tools work, I became interested in understanding how technology makes everyday tasks easier and more efficient. My curiosity grew as I discovered how innovation can connect people around the world and create opportunities in education, business, and entertainment. This interest inspired me to learn more about technology and its endless possibilities, motivating me to improve my skills and stay updated with modern advancements.
+          </p>
+
+          <br>
+
+          <p>
+            I am a back-end and database student developer with experience in storing and managing files correctly. I specialize in MySql, Java, and C++. I also specialize in networking and server configuration.
+          </p>
+
+          <br>
+
+          <p>
+            My goal is to create efficient systems that deliver fast,
+            reliable, and secure user experiences.
+          </p>
+
+        
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>HTML</h3>
+          <p>Building Structured Website</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>CSS</h3>
+          <p>Designing Website</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Java</h3>
+          <p>Highly secure, portable, and reliable</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Php</h3>
+          <p>Dynamic, interactive, and data-driven websites and web applications</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>C++</h3>
+          <p>Build high-performance, resource-efficient applications</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>MySQL</h3>
+          <p>Store, organize, and manage data in a structured format</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Computer Network</h3>
+          <p>Connect computing devices</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Computer Server</h3>
+          <p>Provide services to other computers</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      
+      <h2 class="section-title">Tools</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Git</h3>
+        </div>
+        <div class="skill-card">
+          <h3 >Canva</h3>
+        </div>
+        <div class="skill-card">
+         <h3>Figma</h3>
+        </div>
+        <div class="skill-card">
+         <h3>MS Office</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <img src="Network-Setup-Configuration-in-Kochi-for-Growing-Businesses-A-Complete-Guide.png" alt="Project">
+
+          <div class="project-content">
+            <h3>Set-up Computer Networks and Servers</h3>
+            <p>
+              A successful deployment approach to both the physical hardware and the software configuration.
+            </p>
+
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="images.png" alt="Project">
+
+          <div class="project-content">
+            <h3>Payroll System</h3>
+            <p><br>
+              A simple Payroll system use to manage, automate, and streamline the payment of employees using Java and MySQL.
+            </p>
+
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="Ems.png" alt="Project">
+
+          <div class="project-content">
+            <h3>Event Management System</h3>
+            <p><br>
+              A Web-based system that shows what event are available in a specific day.  Built using HTMl, CSS, and Java.
+            </p>
+
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container contact">
+      <h2 class="section-title">Contact Me</h2>
+
+      <p>Email: markangelosapnu@gmail.com</p>
+
+      <div class="socials">
+        <a href="https://github.com/itssapnu">GitHub</a>
+        <a href="">Email</a>
+        <a href="https://www.facebook.com/M4NGKALOYUK">Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built by Mark Angelo Sapnu - BSIT-2E</p>
+  </footer>
+
+</body>
+</html>
